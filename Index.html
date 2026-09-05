@@ -3,14 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Summit Budapest 2026 — a te menetrended (frissítve)</title>
+<title>AI Summit Budapest 2026 — a te menetrended</title>
 <style>
   :root{
-    --paper:#FBF9F4; --card:#FFFFFF; --ink:#1E2330; --muted:#6B7280;
-    --line:#E7E2D6;
-    --mzh:#B9791A; --mzh-tint:#F7EBD3;   /* Magyar Zene Háza */
-    --nm:#137672; --nm-tint:#DBEBE9;      /* Néprajzi Múzeum */
-    --rtl:#8A4FBE;                         /* RTL Liget */
+    --paper:#FBF9F4; --card:#FFFFFF; --ink:#1E2330; --muted:#6B7280; --line:#E7E2D6;
+    --mzh:#B9791A; --mzh-tint:#F7EBD3; --nm:#137672; --nm-tint:#DBEBE9;
     --star:#C23B22; --radius:14px;
   }
   *{box-sizing:border-box}
@@ -19,33 +16,25 @@
   .wrap{max-width:660px;margin:0 auto;padding:22px 16px 60px}
   header h1{font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin:0 0 4px}
   header .job{color:var(--muted);font-size:.95rem;margin:0 0 14px}
-  .note{font-size:.8rem;color:var(--muted);background:#fff;border:1px solid var(--line);
-    border-radius:10px;padding:9px 11px;margin:0 0 14px}
-  .resv{font-size:.86rem;background:var(--nm-tint);border:1px solid #BFDDD9;border-radius:12px;
-    padding:12px 13px;margin:0 0 18px}
+  .note{font-size:.8rem;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 11px;margin:0 0 14px}
+  .resv{font-size:.86rem;background:var(--nm-tint);border:1px solid #BFDDD9;border-radius:12px;padding:12px 13px;margin:0 0 18px}
   .resv b{color:#0F5B57}
   .resv ul{margin:8px 0 0;padding-left:18px}
   .resv li{margin:3px 0}
-  .tabs{position:sticky;top:0;z-index:5;display:flex;gap:8px;background:var(--paper);
-    padding:8px 0 10px;margin:0 0 6px}
-  .tab{flex:1;appearance:none;cursor:pointer;font:inherit;font-weight:700;padding:10px 8px;
-    border-radius:11px;border:1px solid var(--line);background:#fff;color:var(--ink);line-height:1.15}
+  .tabs{position:sticky;top:0;z-index:5;display:flex;gap:8px;background:var(--paper);padding:8px 0 10px;margin:0 0 6px}
+  .tab{flex:1;appearance:none;cursor:pointer;font:inherit;font-weight:700;padding:10px 8px;border-radius:11px;border:1px solid var(--line);background:#fff;color:var(--ink);line-height:1.15}
   .tab small{display:block;font-weight:500;font-size:.72rem;color:var(--muted)}
   .tab[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
   .tab[aria-selected="true"] small{color:#C9CDD6}
   .tab:focus-visible{outline:3px solid #9AA3B2;outline-offset:2px}
-  .route{font-size:.82rem;color:var(--muted);border-left:3px solid var(--line);
-    padding:2px 0 2px 11px;margin:10px 2px 16px}
+  .route{font-size:.82rem;color:var(--muted);border-left:3px solid var(--line);padding:2px 0 2px 11px;margin:10px 2px 16px}
   .day{display:none} .day.active{display:block}
-  .talk{position:relative;background:var(--card);border:1px solid var(--line);
-    border-left:5px solid var(--line);border-radius:var(--radius);padding:12px 13px;margin:0 0 10px}
+  .talk{position:relative;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--line);border-radius:var(--radius);padding:12px 13px;margin:0 0 10px}
   .talk.mzh{border-left-color:var(--mzh)} .talk.nm{border-left-color:var(--nm)}
-  .talk.rtl{border-left-color:var(--rtl)}
   .talk.opt{background:#FCFBF8;opacity:.93}
   .talk.opt .title{font-weight:600;color:#3A4150}
   .row1{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px}
-  .time{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.78rem;
-    font-weight:600;background:var(--ink);color:#fff;padding:3px 8px;border-radius:7px;white-space:nowrap}
+  .time{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.78rem;font-weight:600;background:var(--ink);color:#fff;padding:3px 8px;border-radius:7px;white-space:nowrap}
   .tag{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 7px;border-radius:6px}
   .tag.must{background:#FBE4DE;color:var(--star)} .tag.opt{background:#EEEAE0;color:#7A7466}
   .lang{font-size:.66rem;font-weight:700;color:var(--muted);border:1px solid var(--line);padding:2px 6px;border-radius:6px}
@@ -56,7 +45,6 @@
   .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
   .venue.mzh{color:var(--mzh)} .venue.mzh .dot{background:var(--mzh)}
   .venue.nm{color:var(--nm)} .venue.nm .dot{background:var(--nm)}
-  .venue.rtl{color:var(--rtl)} .venue.rtl .dot{background:var(--rtl)}
   .why{font-size:.82rem;color:#454C59;margin-top:6px}
   .clash{font-size:.76rem;color:#9A5B00;background:#FBF0DC;border-radius:7px;padding:5px 8px;margin-top:7px}
   .walk{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--muted);margin:2px 0 12px;padding-left:4px}
@@ -71,17 +59,17 @@
 <div class="wrap">
   <header>
     <h1>AI Summit Budapest 2026</h1>
-    <p class="job">A te menetrended · szept. 7–8. · a program 2026. aug. közepi, frissített állapota szerint.</p>
+    <p class="job">A te menetrended · szept. 7–8. · Városliget. A helyszínen csak nézd, hova indulj.</p>
   </header>
 
-  <p class="note">A szervező jelzi, hogy a percre pontos program a rendezvényig még változhat — indulás előtt vesd össze a hivatalos oldallal. Van egy harmadik helyszín is (RTL Liget – Média Lab), de a neked való előadások mind a Zene Házában és a Néprajziban vannak.</p>
+  <p class="note">Frissítve a rendezvény előtti programhoz. A neked való előadások a Magyar Zene Házában és a Néprajzi Múzeumban vannak (pár száz méter, ~5–10 perc séta). A percre pontos program a helyszínen még csúszhat — indulás előtt vesd össze a hivatalos apppal.</p>
 
   <div class="resv">
-    <b>Helyfoglalás.</b> A helyet <b>foglalható szekciónként</b> (nem előadásonként) tudod lefoglalni a 12 karakteres <b>jegykódoddal</b> az aisummitbudapest.hu/agenda oldalon — a szekció „Foglalás" gombjával vagy az oldal alján lévő „Időpontfoglalás" mezőben. A must-see-idet tartó szekciók, amiket érdemes lefoglalni:
+    <b>Helyfoglalás.</b> A summit <b>foglalható szekciónként</b> működik (nem előadásonként): a 12 karakteres <b>jegykódoddal</b> foglalsz az aisummitbudapest.hu/agenda oldalon, a szekció „Foglalás" gombjával. A must-see-idet tartó szekciók:
     <ul>
-      <li><b>1. nap:</b> „AI Art Summit" (Cinematic Studio) a 16:10-es reklámipar-kerekasztalhoz; ha a kereskedelmi vonalat viszed: „AI Economy Summit II." (Quantum); ha az ügynökségi reggelt: „AI Media Industry Summit" (Méta Open Lab).</li>
-      <li><b>2. nap:</b> „AI Trends V." (Visionary) a Kachidza-előadáshoz; „AI Economy Summit" (Future Lab) az ügynökcsapatok + hatékonyság blokkhoz; „AI IT &amp; Cyber Security" (Innovation Hall) a délutáni fejlesztői blokkhoz.</li>
-      <li><b>Figyelem:</b> a MKIK Prompt Aréna workshopjainál (Vibe Coding, AI-first cég, Reklámok az AI videók korában, „10 fős cég") nem láttam külön foglalható-szekció jelölést — ezek workshopok, jellemzően korlátozott hellyel, úgyhogy a jegykóddal ellenőrizd a foglalhatóságot, vagy érkezz korán.</li>
+      <li><b>1. nap:</b> „AI Art Summit" (Cinematic) a 16:10-es reklámipar-kerekasztalhoz; a kereskedelmi opciókhoz „AI Economy Summit I." (Quantum); az ügynökségi/média blokkhoz „AI Media Industry Summit" (Méta Open Lab).</li>
+      <li><b>2. nap:</b> „AI Trends V." (Visionary) a Kachidzához; „AI Economy Summit" (Future Lab) a teljes üzleti/ügynök blokkhoz.</li>
+      <li><b>A Prompt Aréna workshopjainál</b> (agents, AI-first cég, Vibe Coding, AI-videós reklám, Voicebotok) nem láttam külön foglalható-szekció jelölést — ezek workshopok korlátozott hellyel, úgyhogy érkezz korán.</li>
     </ul>
   </div>
 
@@ -92,18 +80,12 @@
 
   <!-- ===== NAP 1 ===== -->
   <section class="day active" id="day1" role="tabpanel" aria-labelledby="tab1">
-    <p class="route">Ajánlott gerinc: telepedj le a Zene Háza <b>MKIK Prompt Arénájában</b> — ott fut sorban az agents → AI-first cég → vibe coding → AI-videós reklám. Késő délután egy ugrás a Néprajzi Cinematic Studiójába a reklámipar-kerekasztalra. Ha inkább az ügynökségi/média vonal érdekel, a reggelt töltsd a Néprajzi Méta Open Labjában (de akkor lemaradsz a 10:25-ös agentsről).</p>
+    <p class="route">Ajánlott gerinc: telepedj le a Zene Háza <b>MKIK Prompt Arénájában</b> — ott fut sorban szinte az egész napod (agents → AI-first cég → vibe coding → AI-videós reklám → voicebotok). Késő délután egy ugrás a Néprajzi Cinematic Studiójába a reklámipar-kerekasztalra.</p>
 
     <div class="talk mzh opt">
-      <div class="row1"><span class="time">09:20</span><span class="tag opt">opció</span><span class="lang">HU</span></div>
+      <div class="row1"><span class="time">09:40</span><span class="tag opt">opció</span><span class="lang">HU</span></div>
       <div class="title">Agentic enterprise – a vállalati AI-ügynökök kora</div>
       <div class="meta"><span class="who">Mihályi Antal</span> (Google) · Visionary Stage · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
-    </div>
-
-    <div class="talk nm opt">
-      <div class="row1"><span class="time">09:20</span><span class="tag opt">opció</span><span class="lang">HU</span></div>
-      <div class="title">Kamera nélkül? – az AI átírja a reklámfilmgyártást</div>
-      <div class="meta"><span class="who">Hidvégi Zoltán</span> (Umbrella Collective) · Méta Open Lab · <span class="venue nm"><span class="dot"></span>Néprajzi</span></div>
     </div>
 
     <div class="talk mzh">
@@ -112,30 +94,23 @@
       <div class="meta"><span class="who">Kerek István</span> (Everengine) · MKIK Prompt Aréna · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
     </div>
 
-    <div class="talk nm opt">
-      <div class="row1"><span class="time">10:45</span><span class="tag opt">opció</span><span class="lang">HU</span></div>
-      <div class="title">AI First Commerce – az AI-korszak kereskedelme</div>
-      <div class="meta"><span class="who">Deák András</span> · Quantum Stage · <span class="venue nm"><span class="dot"></span>Néprajzi</span></div>
-    </div>
-
-    <div class="talk nm opt">
+    <div class="talk mzh opt">
       <div class="row1"><span class="time">11:05</span><span class="tag opt">opció</span><span class="lang">HU</span></div>
-      <div class="title">Keresésből checkout: az AI-vezérelt kereskedelem következő korszaka</div>
+      <div class="title">Keresésből checkout: az AI-vezérelt kereskedelem</div>
       <div class="meta"><span class="who">Vadász Illés</span> (Google) · Quantum Stage · <span class="venue nm"><span class="dot"></span>Néprajzi</span></div>
     </div>
 
     <div class="talk nm opt">
       <div class="row1"><span class="time">11:10</span><span class="tag opt">opció</span><span class="lang">HU</span></div>
-      <div class="title">Az algoritmus kezében a média budget – ki dönt a következő kampányokról?</div>
+      <div class="title">Az algoritmus kezében a média budget – ki dönt a kampányokról?</div>
       <div class="meta"><span class="who">Dentsu · Publicis · WPP · Omnicom</span> · Méta Open Lab · <span class="venue nm"><span class="dot"></span>Néprajzi</span></div>
     </div>
 
     <div class="talk mzh">
       <div class="row1"><span class="time">11:45</span><span class="tag must">menj el</span><span class="lang">HU</span></div>
-      <div class="title"><span class="star">★</span> Működő cégből AI-first vállalkozás – így tervezzük újra a szolgáltató céged működését</div>
+      <div class="title"><span class="star">★</span> Működő cégből AI-first vállalkozás</div>
       <div class="meta"><span class="who">Kiss Szabolcs</span> (AOMEX) · MKIK Prompt Aréna · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
       <div class="why">Pontosan az RG helyzete. A nap egyik kulcsa.</div>
-      <div class="clash">Ütközik a 11:05/11:10-es néprajzi opciókkal — döntsd el, kereskedelem/média vagy az AI-first cég.</div>
     </div>
 
     <div class="talk nm opt">
@@ -144,18 +119,11 @@
       <div class="meta"><span class="who">Tóth Benedek</span> (Molin AI) · Quantum Stage · <span class="venue nm"><span class="dot"></span>Néprajzi</span></div>
     </div>
 
-    <div class="talk mzh opt">
-      <div class="row1"><span class="time">12:55</span><span class="tag opt">opció</span><span class="lang">HU</span></div>
-      <div class="title">Compliance by design: AI-ügynökök az EU AI Act korában</div>
-      <div class="meta"><span class="who">Fauszt Gábor</span> (Zenitech) · Future Lab · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
-      <div class="why">Az EU AI Act megfelelési szolgáltatás-ötletedhez.</div>
-    </div>
-
     <div class="talk mzh">
       <div class="row1"><span class="time">13:30</span><span class="tag must">menj el</span><span class="lang">EN</span></div>
       <div class="title"><span class="star">★</span> Vibe Coding Live: egy teljes digitális megoldás felépítése</div>
       <div class="meta"><span class="who">Nicolas Guyon</span> (Comptoir IA) · MKIK Prompt Aréna · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
-      <div class="why">Élő vibe coding — a te Claude Code-os építős munkádhoz.</div>
+      <div class="why">Élő vibe coding — a Claude Code-os építős munkádhoz.</div>
     </div>
 
     <div class="talk mzh">
@@ -165,39 +133,34 @@
       <div class="why">AI-videós hirdetés — a webshopos UGC-irányodhoz.</div>
     </div>
 
+    <div class="talk mzh">
+      <div class="row1"><span class="time">15:40</span><span class="tag must">menj el</span><span class="lang">HU</span></div>
+      <div class="title"><span class="star">★</span> Voicebotok a valóság próbáján – valós ügyféltapasztalatok</div>
+      <div class="meta"><span class="who">Andrejkovics Zoltán</span> (VCC Live) · MKIK Prompt Aréna · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
+      <div class="why">Új a programban — pont a telefonos AI-ügynök projektedhez: mi válik be élesben, mi nem.</div>
+    </div>
+
     <div class="walk"><span class="ln"></span><b>átsétálás</b> Zene Háza → Néprajzi (~5–10 perc)<span class="ln"></span></div>
 
     <div class="talk nm">
       <div class="row1"><span class="time">16:10</span><span class="tag must">menj el</span><span class="lang">HU</span></div>
       <div class="title"><span class="star">★</span> Kreativitás algoritmusra hangolva – AI és reklámipar</div>
-      <div class="meta"><span class="who">Jakab Benedek (RAIZEN) · Szabó Béla (Telekom) · Hartung Attila</span> · Cinematic Studio · <span class="venue nm"><span class="dot"></span>Néprajzi</span></div>
+      <div class="meta"><span class="who">Jakab Benedek (RAIZEN) · Szabó Béla (Telekom)</span> · Cinematic Studio · <span class="venue nm"><span class="dot"></span>Néprajzi</span></div>
       <div class="why">A core-od: AI a reklámban.</div>
-    </div>
-
-    <div class="talk mzh opt">
-      <div class="row1"><span class="time">16:35</span><span class="tag opt">opció</span><span class="lang">HU</span></div>
-      <div class="title">Mire lesz képes a jövő webshopja? – Sellvio (pályázatgyőztes platform)</div>
-      <div class="meta"><span class="who">Erdudac Dániel</span> (ErdSoft) · MKIK Prompt Aréna · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
-      <div class="why">Webshop + AI + pályázat egyben — a te irányaid metszete.</div>
-      <div class="clash">Ütközik a 16:10-es reklámipar-kerekasztallal, és másik épületben van.</div>
+      <div class="clash">Ütközik a 16:00-s „Egy prompt, egy AI-csapat" agent-workshoppal (Prompt Aréna, Zene Háza) és a 16:35-ös Sellvio webshop-előadással — döntsd el a helyszínen.</div>
     </div>
   </section>
 
   <!-- ===== NAP 2 ===== -->
   <section class="day" id="day2" role="tabpanel" aria-labelledby="tab2">
-    <p class="route">Délelőtt–kora délután a Zene Házában (Kachidza → ügynökcsapatok → „10 fős cég"), majd ebéd után ugorj át a Néprajzi <b>Innovation Halljába</b> a délutáni AI-fejlesztői blokkra (Kódváltás → agentic coding → Magyar LLM), ami egy teremben, egymás után fut. Ha inkább élő vibecodingot néznél a Prompt Arénában, azt a fejlesztői blokkért cserébe kapod.</p>
-
-    <div class="talk mzh opt">
-      <div class="row1"><span class="time">09:40</span><span class="tag opt">opció</span><span class="lang">HU</span></div>
-      <div class="title">Kabáthoz a gombot – 6+1 módszer a munkahelyi feladatok AI-támogatott megoldására</div>
-      <div class="meta"><span class="who">Budaházy Szabolcs</span> (AR Works) · MKIK Prompt Aréna · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
-    </div>
+    <p class="route">A második napon a neked való, megerősített program a Zene Házában van: reggel a Visionary Stage (Kachidza), utána a <b>Future Lab „AI Economy Summit"</b> — egy komplett AI-üzleti/ügynök blokk egyetlen teremben. Minimális gyaloglás. (Lásd lent: a Prompt Aréna és a néprajzi termek 2. napi részét ezúttal nem tudtam újra leellenőrizni.)</p>
 
     <div class="talk mzh">
       <div class="row1"><span class="time">10:00</span><span class="tag must">menj el</span><span class="lang">EN</span></div>
       <div class="title"><span class="star">★</span> Globális AI-startup a nulláról – gyakorlati tanulságok kkv-knak</div>
       <div class="meta"><span class="who">Kevin Kachidza</span> (Sarafin AI) · MBH Bank Visionary Stage · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
       <div class="why">A „termékké gyúrjuk az AI-t" tézisedhez.</div>
+      <div class="clash">Vele egy időben a Future Labben: „AI-forradalom vagy hype? Mi hoz eredményt a kkv-knak?" kerekasztal — szintén jó, de a Kachidza konkrétabb.</div>
     </div>
 
     <div class="talk mzh opt">
@@ -214,44 +177,35 @@
     </div>
 
     <div class="talk mzh opt">
+      <div class="row1"><span class="time">11:35</span><span class="tag opt">opció</span><span class="lang">HU</span></div>
+      <div class="title">Agentic AI a piloton túl: hogyan kerüljük el a korai bevezetés hibáit?</div>
+      <div class="meta"><span class="who">Dalos-Kovács Gabriella</span> · Visionary Stage · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
+      <div class="why">A pilotos gondolkodásodhoz (voice agent).</div>
+    </div>
+
+    <div class="talk mzh opt">
       <div class="row1"><span class="time">12:15</span><span class="tag opt">opció</span><span class="lang">HU</span></div>
       <div class="title">A chatbotoktól az agentekig: az AI következő üzleti korszaka</div>
       <div class="meta"><span class="who">Bíró Pál</span> (Google Hungary) · Visionary Stage · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
     </div>
 
+    <div class="talk mzh opt">
+      <div class="row1"><span class="time">12:20</span><span class="tag opt">opció</span><span class="lang">HU</span></div>
+      <div class="title">AI hype helyett hatékonyság</div>
+      <div class="meta"><span class="who">Nagy Balázs Norbert</span> (NBN AI) · Future Lab · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
+    </div>
+
+    <div class="talk mzh opt">
+      <div class="row1"><span class="time">12:40</span><span class="tag opt">opció</span><span class="lang">HU</span></div>
+      <div class="title">Transzformációs sztorik az AI-korszakból</div>
+      <div class="meta"><span class="who">Laczkó Gábor</span> (Stylers Group) · Future Lab · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
+    </div>
+
     <div class="talk mzh">
-      <div class="row1"><span class="time">12:40</span><span class="tag must">menj el</span><span class="lang">HU</span></div>
-      <div class="title"><span class="star">★</span> A 10 fős cég, ami 100 fősnek látszik: AI-agentek a gyakorlatban</div>
-      <div class="meta"><span class="who">Drobinoha Ádám</span> (Adroit Group) · MKIK Prompt Aréna · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
-      <div class="why">Kis csapat + AI-agentek — pont a ti méretetek.</div>
-    </div>
-
-    <div class="talk mzh opt">
-      <div class="row1"><span class="time">13:00</span><span class="tag opt">opció</span><span class="lang">HU</span></div>
-      <div class="title">Hogyan növessz AI agyat a cégednek (AI Second brain)</div>
-      <div class="meta"><span class="who">Bernáth Roland</span> · Future Lab · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
-    </div>
-
-    <div class="walk"><span class="ln"></span><b>átsétálás</b> Zene Háza → Néprajzi (~5–10 perc)<span class="ln"></span></div>
-
-    <div class="talk nm">
-      <div class="row1"><span class="time">14:25</span><span class="tag must">menj el</span><span class="lang">HU</span></div>
-      <div class="title"><span class="star">★</span> Kódváltás: a szoftverfejlesztés lett az AI első üzleti sikere</div>
-      <div class="meta"><span class="who">Jóföldi Endre</span> (Precognox) · Innovation Hall · <span class="venue nm"><span class="dot"></span>Néprajzi</span></div>
-      <div class="clash">Ütközik a 14:00-s Prompt Aréna vibecodinggal (W. Szabó Péter, SAP) — az a Zene Házában van.</div>
-    </div>
-
-    <div class="talk mzh opt">
-      <div class="row1"><span class="time">15:20</span><span class="tag opt">opció</span><span class="lang">HU</span></div>
-      <div class="title">Élő Vibe Coding: üzleti problémától a működő alkalmazásig</div>
-      <div class="meta"><span class="who">Boncz Bálint · Gáll Szabolcs</span> (AppForge) · MKIK Prompt Aréna · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
-      <div class="clash">Ütközik a 15:55-ös agentic coding előadással (Néprajzi) — válaszd, melyik épület.</div>
-    </div>
-
-    <div class="talk nm">
-      <div class="row1"><span class="time">15:55</span><span class="tag must">menj el</span><span class="lang">HU</span></div>
-      <div class="title"><span class="star">★</span> AI-fejlesztés az ügynökvezérelt kódolási forradalomban</div>
-      <div class="meta"><span class="who">Takács Árpád</span> (AUMOVIO) · Innovation Hall · <span class="venue nm"><span class="dot"></span>Néprajzi</span></div>
+      <div class="row1"><span class="time">13:00</span><span class="tag must">menj el</span><span class="lang">HU</span></div>
+      <div class="title"><span class="star">★</span> Hogyan növessz AI agyat a cégednek (AI Second brain)</div>
+      <div class="meta"><span class="who">Bernáth Roland</span> (Online Üzleti Akadémia) · Future Lab · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
+      <div class="why">Céges tudásbázis + AI — az Időnyerőhöz rokon téma.</div>
     </div>
 
     <div class="talk mzh opt">
@@ -260,11 +214,10 @@
       <div class="meta"><span class="who">Mérő Alex</span> (Capmarketing) · Visionary Stage · <span class="venue mzh"><span class="dot"></span>Zene Háza</span></div>
     </div>
 
-    <div class="talk nm">
-      <div class="row1"><span class="time">17:05</span><span class="tag must">menj el</span><span class="lang">HU</span></div>
-      <div class="title"><span class="star">★</span> Magyar LLM-fejlesztések</div>
-      <div class="meta"><span class="who">Ligeti-Nagy Noémi</span> (ELTE Nyelvtudományi Kutatóközpont) · Innovation Hall · <span class="venue nm"><span class="dot"></span>Néprajzi</span></div>
-      <div class="why">Kulcs a magyar nyelvű hangügynök kérdésedhez.</div>
+    <div class="talk nm opt">
+      <div class="row1"><span class="time">?</span><span class="tag opt">ellenőrizd</span><span class="lang">—</span></div>
+      <div class="title">Prompt Aréna workshopok + Néprajzi termek (2. nap)</div>
+      <div class="meta">Ezt a részt a mostani lekérésben nem tudtam újra megerősíteni. Ha élő vibe-coding workshopot vagy a Magyar LLM-előadást keresed, nézd meg a hivatalos appban a 2. napi Prompt Arénát és az Innovation Hallt.</div>
     </div>
   </section>
 
@@ -273,7 +226,6 @@
     <span><span class="sw" style="background:#EEEAE0"></span>opció</span>
     <span><span class="sw" style="background:var(--mzh)"></span>Magyar Zene Háza</span>
     <span><span class="sw" style="background:var(--nm)"></span>Néprajzi Múzeum</span>
-    <span><span class="sw" style="background:var(--rtl)"></span>RTL Liget</span>
   </div>
 </div>
 
